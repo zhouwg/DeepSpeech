@@ -76,8 +76,6 @@ sudo apt-get install -y android-tools-adb android-tools-fastboot autoconf \
 ```
 
 
-
-
 donwload ![bazel-3.1.0](https://github.com/bazelbuild/bazel/releases?page=5) and install bazel manually
 
 ```
@@ -87,7 +85,8 @@ donwload ![bazel-3.1.0](https://github.com/bazelbuild/bazel/releases?page=5) and
   sudo ./bazel-3.1.0-installer-linux-x86_64.sh
 ```
 
-
+- [Android NDK-r21e(LTS)](https://developer.android.com/ndk/downloads)
+- [Android Studio 4.2.1](https://developer.android.google.cn/studio)
 
 
 
