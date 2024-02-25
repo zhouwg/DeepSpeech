@@ -96,7 +96,7 @@ donwload ![bazel-3.1.0](https://github.com/bazelbuild/bazel/releases?page=5) and
 ```
 git clone https://github.com/zhouwg/DeepSpeech
 cd DeepSpeech
-git checkout main
+git checkout kantv
 ```
 
 modify build script to adapt to your local dev envs
@@ -180,7 +180,7 @@ then running APK on real phone
 
 ### Acknowledgement
 
-I learnt/got too much from open source community(much of them came from US and western world,it's the fact) and many/sincerely thanks to all contributors of the great open source community, especially all original authors and all contributors of the great Linux & Android & FFmpeg and other excellent projects. Hope this project is a little useful for open source community.
+I learnt/got too much from open source community(much of them came from US and western world) and many/sincerely thanks to all contributors of the great open source community, especially all original authors and all contributors of the great Linux & Android & FFmpeg and other excellent projects. Hope this project is a little useful for open source community.
 
 
 
