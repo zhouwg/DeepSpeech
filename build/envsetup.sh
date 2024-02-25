@@ -19,7 +19,6 @@ export BUILD_USER=$(whoami)
 export BUILD_TIME=`date +"%Y-%m-%d-%H-%M-%S"`
 export BUILD_HOST=Linux
 export BUILD_TARGET=android
-export ANDROID_NDK=/opt/kantv-toolchains/android-ndk-r21e
 
 export PROJECT_NAME=DeepSpeech-for-KanTV
 export PROJECT_BUILD_TYPE=debug
@@ -31,6 +30,10 @@ export HOME_PATH=$(env | grep ^HOME= | cut -c 6-)
 export PROJECT_HOME_PATH=`pwd`
 export PROJECT_BRANCH=`git branch | grep "*" | cut -f 2 -d ' ' `
 export PROJECT_ROOT_PATH=${PROJECT_HOME_PATH}
+
+#modify following two lines to adapto to local dev envs
+export ANDROID_NDK=/opt/kantv-toolchains/android-ndk-r21e
+export LOCAL_BAZEL_PATH=${HOME_PATH}/.cache/bazel/_bazel_${BUILD_USER}/d483cd2a2d9204cb5bb4d870c2729238
 
 
 . ${PROJECT_ROOT_PATH}/build/public.sh || (echo "can't find public.sh"; exit 1)

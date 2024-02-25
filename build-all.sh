@@ -32,21 +32,30 @@ mkdir -p examples/androiddemo/app/src/main/jniLibs/arm64-v8a
 mkdir -p examples/androiddemo-streaming/app/src/main/jniLibs/armeabi-v7a
 mkdir -p examples/androiddemo-streaming/app/src/main/jniLibs/arm64-v8a
 
-#modify following line to adapto to your local dev envs
-LOCAL_BAZEL_PATH=/home/weiguo/.cache/bazel/_bazel_weiguo/d483cd2a2d9204cb5bb4d870c2729238
+if [ -d ${LOCAL_BAZEL_PATH}/execroot/org_tensorflow/bazel-out ]; then
+    /bin/cp -fv ${LOCAL_BAZEL_PATH}/execroot/org_tensorflow/bazel-out/armeabi-v7a-opt/bin/native_client/libdeepspeech.so deepspeech-jni/libs/armeabi-v7a/
+    /bin/cp -fv ${LOCAL_BAZEL_PATH}/execroot/org_tensorflow/bazel-out/arm64-v8a-opt/bin/native_client/libdeepspeech.so   deepspeech-jni/libs/arm64-v8a/
 
-/bin/cp -fv ${LOCAL_BAZEL_PATH}/execroot/org_tensorflow/bazel-out/armeabi-v7a-opt/bin/native_client/libdeepspeech.so deepspeech-jni/libs/armeabi-v7a/
-/bin/cp -fv ${LOCAL_BAZEL_PATH}/execroot/org_tensorflow/bazel-out/arm64-v8a-opt/bin/native_client/libdeepspeech.so   deepspeech-jni/libs/arm64-v8a/
+    /bin/cp -fv ${LOCAL_BAZEL_PATH}/execroot/org_tensorflow/bazel-out/armeabi-v7a-opt/bin/native_client/libdeepspeech.so examples/androiddemo/app/src/main/jniLibs/armeabi-v7a/
+    /bin/cp -fv ${LOCAL_BAZEL_PATH}/execroot/org_tensorflow/bazel-out/arm64-v8a-opt/bin/native_client/libdeepspeech.so   examples/androiddemo/app/src/main/jniLibs/arm64-v8a/
 
-/bin/cp -fv ${LOCAL_BAZEL_PATH}/execroot/org_tensorflow/bazel-out/armeabi-v7a-opt/bin/native_client/libdeepspeech.so examples/androiddemo/app/src/main/jniLibs/armeabi-v7a/
-/bin/cp -fv ${LOCAL_BAZEL_PATH}/execroot/org_tensorflow/bazel-out/arm64-v8a-opt/bin/native_client/libdeepspeech.so   examples/androiddemo/app/src/main/jniLibs/arm64-v8a/
-
-/bin/cp -fv ${LOCAL_BAZEL_PATH}/execroot/org_tensorflow/bazel-out/armeabi-v7a-opt/bin/native_client/libdeepspeech.so examples/androiddemo-streaming/app/src/main/jniLibs/armeabi-v7a/
-/bin/cp -fv ${LOCAL_BAZEL_PATH}/execroot/org_tensorflow/bazel-out/arm64-v8a-opt/bin/native_client/libdeepspeech.so   examples/androiddemo-streaming/app/src/main/jniLibs/arm64-v8a/
+    /bin/cp -fv ${LOCAL_BAZEL_PATH}/execroot/org_tensorflow/bazel-out/armeabi-v7a-opt/bin/native_client/libdeepspeech.so examples/androiddemo-streaming/app/src/main/jniLibs/armeabi-v7a/
+    /bin/cp -fv ${LOCAL_BAZEL_PATH}/execroot/org_tensorflow/bazel-out/arm64-v8a-opt/bin/native_client/libdeepspeech.so   examples/androiddemo-streaming/app/src/main/jniLibs/arm64-v8a/
 
 
-cd ${PROJECT_ROOT_PATH}/deepspeech-jni
-./build.sh
+
+    cd ${PROJECT_ROOT_PATH}/deepspeech-jni
+    ./build.sh
+
+    cd ${PROJECT_ROOT_PATH}
+    /bin/cp -fv deepspeech-jni/libs/armeabi-v7a/lib*jni*.so examples/androiddemo/app/src/main/jniLibs/armeabi-v7a/
+    /bin/cp -fv deepspeech-jni/libs/arm64-v8a/lib*jni*.so   examples/androiddemo/app/src/main/jniLibs/arm64-v8a/
+    /bin/cp -fv deepspeech-jni/libs/armeabi-v7a/lib*jni*.so examples/androiddemo-streaming/app/src/main/jniLibs/armeabi-v7a/
+    /bin/cp -fv deepspeech-jni/libs/arm64-v8a/lib*jni*.so   examples/androiddemo-streaming/app/src/main/jniLibs/arm64-v8a/
+
+else
+   echo "pls check dev envs"
+fi
 
 }
 
@@ -58,13 +67,6 @@ cd ${PROJECT_ROOT_PATH}
 ls -l deepspeech-jni/libs/arm64-v8a/
 ls -l deepspeech-jni/libs/armeabi-v7a/
 
-
-/bin/cp -fv deepspeech-jni/libs/armeabi-v7a/lib*jni*.so examples/androiddemo/app/src/main/jniLibs/armeabi-v7a/
-/bin/cp -fv deepspeech-jni/libs/arm64-v8a/lib*jni*.so   examples/androiddemo/app/src/main/jniLibs/arm64-v8a/
-
-/bin/cp -fv deepspeech-jni/libs/armeabi-v7a/lib*jni*.so examples/androiddemo-streaming/app/src/main/jniLibs/armeabi-v7a/
-/bin/cp -fv deepspeech-jni/libs/arm64-v8a/lib*jni*.so   examples/androiddemo-streaming/app/src/main/jniLibs/arm64-v8a/
-
 ls -l examples/androiddemo/app/src/main/jniLibs/armeabi-v7a/
 ls -l examples/androiddemo/app/src/main/jniLibs/arm64-v8a/
 
@@ -72,6 +74,7 @@ ls -l examples/androiddemo-streaming/app/src/main/jniLibs/armeabi-v7a/
 ls -l examples/androiddemo-streaming/app/src/main/jniLibs/arm64-v8a/
 
 }
+
 
 build_init
 build_tensorflow
