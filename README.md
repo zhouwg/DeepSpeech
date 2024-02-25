@@ -107,7 +107,7 @@ git checkout kantv
 
 #### Pre-Build
 
-modify build script(build/envsetup.sh) to adapto to your local dev envs
+modify build script(build/envsetup.sh) to adapt to your local dev envs
 
 https://github.com/zhouwg/DeepSpeech/blob/kantv/build/envsetup.sh#L34
 
