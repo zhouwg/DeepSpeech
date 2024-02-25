@@ -182,7 +182,7 @@ deepspeech-0.9.3-models.scorer: 1 file pushed. 16.4 MB/s (953363776 bytes in 55.
 
 ### Acknowledgement
 
-I learnt/got too much from open source community(much of them came from US and western world) and many/sincerely thanks to all contributors of the great open source community, especially all original authors and all contributors of the great Linux & Android & FFmpeg and other excellent projects. Hope this project is a little useful for open source community.
+I learnt/got too much from open source community and many/sincerely thanks to all contributors of the great open source community, especially all original authors and all contributors of the great Linux & Android & FFmpeg and other excellent projects. Hope this project is a little useful for open source community.
 
 
 
