@@ -553,11 +553,8 @@ char*
 DS_Version()
 {
   //return strdup(ds_version());
-  
   static char versionString[128];
   memset(versionString, 0, 128);
-  //snprintf(versionString, 128, "%s, TensorFlow version:%s, build time:%s,%s", ds_version(), TFLITE_VERSION_STRING, __DATE__, __TIME__);
-  snprintf(versionString, 128, "%s(Google TensorFlow), build time:%s,%s", TFLITE_VERSION_STRING, __DATE__, __TIME__);
-  //snprintf(versionString, 128, "%s, build time:%s,%s", ds_version(), __DATE__, __TIME__);
+  snprintf(versionString, 128, "Google TensorFlow %s, DeepSpeech %s, build time:%s,%s", TFLITE_VERSION_STRING, ds_version(), __DATE__, __TIME__);
   return versionString;
 }

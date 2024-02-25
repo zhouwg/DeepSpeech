@@ -195,7 +195,7 @@ public class MainActivity extends AppCompatActivity {
 
         this.newModel(this._tfliteModel.getText().toString());
         if (this._m != null) {
-            _appInfo.setText("DeepSpeech engine version:" + this._m.getVersion());
+            _appInfo.setText("DeepSpeech version:" + this._m.getVersion());
         } else {
             CDELog.j(TAG, "deep module init failed");
             _appInfo.setText("DeepSpeech initialization failed");
