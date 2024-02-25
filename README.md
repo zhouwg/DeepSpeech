@@ -75,8 +75,9 @@ sudo apt-get install -y android-tools-adb android-tools-fastboot autoconf \
 
 ```
 
-
-donwload ![bazel-3.1.0](https://github.com/bazelbuild/bazel/releases?page=5) and install bazel manually
+- bazel
+  
+  download ![bazel-3.1.0](https://github.com/bazelbuild/bazel/releases?page=5) and install bazel manually
 
 ```
   wget https://github.com/bazelbuild/bazel/releases/download/3.1.0/bazel-3.1.0-linux-x86_64
@@ -85,12 +86,18 @@ donwload ![bazel-3.1.0](https://github.com/bazelbuild/bazel/releases?page=5) and
   sudo ./bazel-3.1.0-installer-linux-x86_64.sh
 ```
 
-- [Android NDK-r21e(LTS)](https://developer.android.com/ndk/downloads)
-- [Android Studio 4.2.1](https://developer.android.google.cn/studio)
+- Android NDK & Android Studio
+
+  download and install Android Studio and Android NDK-r21e manually
+  
+  [Android NDK-r21e(LTS)](https://developer.android.com/ndk/downloads)
+
+
+  [Android Studio 4.2.1](https://developer.android.google.cn/studio)
 
 
 
-#### Before Build
+#### Fetch source codes
 
 ```
 git clone https://github.com/zhouwg/DeepSpeech
@@ -98,21 +105,20 @@ cd DeepSpeech
 git checkout kantv
 ```
 
-modify build script to adapt to your local dev envs
+#### Pre-Build
+
+modify build script(build/envsetup.sh) to adapto to your local dev envs
+
+https://github.com/zhouwg/DeepSpeech/blob/kantv/build/envsetup.sh#L22
+
+modify build script(build-all.sh) to adapt to your local dev envs
 
 https://github.com/zhouwg/DeepSpeech/blob/kantv/build-all.sh#L36
 
-```
-# add these lines to your ~/.bash_profile or ~/.profile
-# export ANDROID_SDK=<your sdk path>
-# ndk-r21e was used in this project, if you intall from SDK Manager
-# export ANDROID_NDK=<your sdk path>/sdk/ndk/21.4.7075529
-
-```
 
 #### Build 
 
-step1:build all native libs
+- step1:build all native codes to generated essential libs
 
 ```
 ./build-all.sh
@@ -120,12 +126,12 @@ step1:build all native libs
 
 ```
 
-step2: build Android examples
-
+- step2: build Android examples
 
 build Android examples by latest Android Studio IDE
 
-#### Run
+
+#### Post-Build
 
  dowload model file from ![offcial DeepSpeech](https://github.com/mozilla/DeepSpeech/releases/tag/v0.9.3) and upload model file to real Android phone
 
@@ -148,7 +154,7 @@ deepspeech-0.9.3-models.scorer: 1 file pushed. 16.4 MB/s (953363776 bytes in 55.
 
 ```
 
-then running APK on real phone
+#### Run Android example on real Android phone
 
 ![Screenshot_20240225_165453_com cdeos deepspeechdemo](https://github.com/zhouwg/kantv/assets/6889919/c8a2cd0e-59cd-4a39-8b27-265d9c3c5d57)
 
