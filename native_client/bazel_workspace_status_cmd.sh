@@ -15,12 +15,12 @@ set -ex
 # and the output will be discarded.
 
 # The code below presents an implementation that works for git repository
-tf_git_rev=$(git describe --long --tags)
+#tf_git_rev=$(git describe --long --tags)
 echo "STABLE_TF_GIT_VERSION ${tf_git_rev}"
 
 # use this trick to be able to use the script from anywhere
 pushd $(dirname "$0")
-ds_git_rev=$(git describe --long --tags)
+#ds_git_rev=$(git describe --long --tags)
 echo "STABLE_DS_GIT_VERSION ${ds_git_rev}"
 ds_version=$(cat ../training/deepspeech_training/VERSION)
 echo "STABLE_DS_VERSION ${ds_version}"

@@ -2,15 +2,16 @@
 #include "tensorflow/lite/string_util.h"
 #include "workspace_status.h"
 
-#ifdef __ANDROID__
-#include <android/log.h>
-#define  LOG_TAG    "libdeepspeech"
-#define  LOGD(...)  __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, __VA_ARGS__)
-#define  LOGE(...)  __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)
-#else
-#define  LOGD(...)
-#define  LOGE(...)
-#endif // __ANDROID__
+#include "cde_log.h"
+//#ifdef __ANDROID__
+//#include <android/log.h>
+//#define  LOG_TAG    "libdeepspeech"
+//#define  LOGD(...)  __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, __VA_ARGS__)
+//#define  LOGE(...)  __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)
+//#else
+//#define  LOGD(...)
+//#define  LOGE(...)
+//#endif // __ANDROID__
 
 using namespace tflite;
 using std::vector;
@@ -110,6 +111,7 @@ getTfliteDelegates()
 #ifdef __ANDROID__
   if (env_delegate == std::string("gpu")) {
     LOGD("Trying to get GPU delegate ...");
+    LOGJ("Trying to get GPU delegate ...");
     // Try to get GPU delegate
     {
       tflite::Interpreter::TfLiteDelegatePtr delegate = evaluation::CreateGPUDelegate();
@@ -124,6 +126,7 @@ getTfliteDelegates()
 
   if (env_delegate == std::string("nnapi")) {
     LOGD("Trying to get NNAPI delegate ...");
+    LOGJ("Trying to get NNAPI delegate ...");
     // Try to get Android NNAPI delegate
     {
       tflite::Interpreter::TfLiteDelegatePtr delegate = evaluation::CreateNNAPIDelegate();
@@ -138,6 +141,7 @@ getTfliteDelegates()
 
   if (env_delegate == std::string("hexagon")) {
     LOGD("Trying to get Hexagon delegate ...");
+    LOGJ("Trying to get Hexagon delegate ...");
     // Try to get Android Hexagon delegate
     {
       const std::string libhexagon_path("/data/local/tmp");
@@ -166,6 +170,7 @@ TFLiteModelState::init(const char* model_path)
   fbmodel_ = tflite::FlatBufferModel::BuildFromFile(model_path);
   if (!fbmodel_) {
     std::cerr << "Error at reading model file " << model_path << std::endl;
+    LOGJ("Error at reading model file\n");
     return DS_ERR_FAIL_INIT_MMAP;
   }
 

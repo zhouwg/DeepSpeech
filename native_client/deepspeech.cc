@@ -22,15 +22,18 @@
 #endif // USE_TFLITE
 
 #include "ctcdecode/ctc_beam_search_decoder.h"
+#include "tensorflow/lite/version.h"
 
 #ifdef __ANDROID__
-#include <android/log.h>
-#define  LOG_TAG    "libdeepspeech"
-#define  LOGD(...)  __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, __VA_ARGS__)
-#define  LOGE(...)  __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)
+//#include "cde_log.h"
+//#include <android/log.h>
+//#define  LOG_TAG    "libdeepspeech"
+//#define  LOGD(...)  __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, __VA_ARGS__)
+//#define  LOGE(...)  __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)
+//
 #else
-#define  LOGD(...)
-#define  LOGE(...)
+//#define  LOGD(...)
+//#define  LOGE(...)
 #endif // __ANDROID__
 
 using std::vector;
@@ -270,9 +273,9 @@ DS_CreateModel(const char* aModelPath,
 
   std::cerr << "TensorFlow: " << tf_local_git_version() << std::endl;
   std::cerr << "DeepSpeech: " << ds_git_version() << std::endl;
+  LOGD("TensorFlow: %s", tf_local_git_version());
 #ifdef __ANDROID__
   LOGE("TensorFlow: %s", tf_local_git_version());
-  LOGD("TensorFlow: %s", tf_local_git_version());
   LOGE("DeepSpeech: %s", ds_git_version());
   LOGD("DeepSpeech: %s", ds_git_version());
 #endif
@@ -297,6 +300,7 @@ DS_CreateModel(const char* aModelPath,
 
   int err = model->init(aModelPath);
   if (err != DS_ERR_OK) {
+    LOGJ("model initialization failed\n");
     return err;
   }
 
@@ -333,6 +337,7 @@ int
 DS_EnableExternalScorer(ModelState* aCtx,
                         const char* aScorerPath)
 {
+  LOGJ("score path:%s\n", aScorerPath);
   std::unique_ptr<Scorer> scorer(new Scorer());
   int err = scorer->init(aScorerPath, aCtx->alphabet_);
   if (err != 0) {
@@ -547,5 +552,12 @@ DS_FreeString(char* str)
 char*
 DS_Version()
 {
-  return strdup(ds_version());
+  //return strdup(ds_version());
+  
+  static char versionString[128];
+  memset(versionString, 0, 128);
+  //snprintf(versionString, 128, "%s, TensorFlow version:%s, build time:%s,%s", ds_version(), TFLITE_VERSION_STRING, __DATE__, __TIME__);
+  snprintf(versionString, 128, "%s(Google TensorFlow), build time:%s,%s", TFLITE_VERSION_STRING, __DATE__, __TIME__);
+  //snprintf(versionString, 128, "%s, build time:%s,%s", ds_version(), __DATE__, __TIME__);
+  return versionString;
 }

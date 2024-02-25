@@ -387,6 +387,8 @@ char* DS_Version();
 DEEPSPEECH_EXPORT
 char* DS_ErrorCodeToErrorMessage(int aErrorCode);
 
+#include "cde_log.h"
+
 #undef DEEPSPEECH_EXPORT
 
 #ifdef __cplusplus

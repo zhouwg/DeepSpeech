@@ -11,6 +11,9 @@
 
 #else          /* _MSC_VER  */
   #include <unistd.h>
+  #include <string.h>
+  #include <error.h>
+  #include <errno.h>
 #endif
 
 #include "scorer.h"
@@ -31,6 +34,7 @@ int
 Scorer::init(const std::string& lm_path,
              const Alphabet& alphabet)
 {
+  LOGJ("path:%s\n", lm_path.c_str());
   set_alphabet(alphabet);
   return load_lm(lm_path);
 }
@@ -73,13 +77,16 @@ int Scorer::load_lm(const std::string& lm_path)
 {
   // Check if file is readable to avoid KenLM throwing an exception
   const char* filename = lm_path.c_str();
+  LOGJ("filename:%s\n", filename);
   if (access(filename, R_OK) != 0) {
+    LOGJ("can't access file %s, reason:%s\n", filename, strerror(errno));
     return DS_ERR_SCORER_UNREADABLE;
   }
 
   // Check if the file format is valid to avoid KenLM throwing an exception
   lm::ngram::ModelType model_type;
   if (!lm::ngram::RecognizeBinary(filename, model_type)) {
+    LOGJ("recognized binary file %s failed,reason:%s\n", filename, strerror(errno));
     return DS_ERR_SCORER_INVALID_LM;
   }
 

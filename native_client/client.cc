@@ -454,6 +454,7 @@ main(int argc, char **argv)
   ModelState* ctx;
   // sphinx-doc: c_ref_model_start
   int status = DS_CreateModel(model, &ctx);
+  LOGJ("model path: %s\n", model);
   if (status != 0) {
     char* error = DS_ErrorCodeToErrorMessage(status);
     fprintf(stderr, "Could not create model: %s\n", error);
