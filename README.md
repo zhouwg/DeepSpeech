@@ -8,7 +8,7 @@ This is source code of DeepSpeech(my customized DeepSpeech for project KanTV), d
 
 - refine the build system
 
-- refine the Android examples and validated them in my various phone(Huawei's phone with hisilicon SoC, Xiaomi's phone with latest qcom SoC------Qualcomm SM8650-AB Snapdragon 8 Gen 3 (4 nm))
+- refine the Android examples and validated them in my various phone(Huawei's phone with hisilicon SoC, Xiaomi 14 with latest qcom SoC------Qualcomm SM8650-AB Snapdragon 8 Gen 3 (4 nm))
 
 The goal of this project is:
 
