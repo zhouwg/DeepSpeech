@@ -101,7 +101,7 @@ git checkout kantv
 
 modify build script to adapt to your local dev envs
 
-https://github.com/zhouwg/DeepSpeech/blob/main/build-all.sh#L36
+https://github.com/zhouwg/DeepSpeech/blob/kantv/build-all.sh#L36
 
 ```
 # add these lines to your ~/.bash_profile or ~/.profile
