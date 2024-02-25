@@ -139,7 +139,7 @@ public final class MainActivity extends AppCompatActivity {
                     CDELog.j(TAG, "last decoded is equal current(repeat count:" + repeatCount + ", decode:length:" + decoded.length());
                     if ((decoded.length() > 1024)
                             || ((repeatCount > 200) && (decoded.length() > 512))
-                            || ((repeatCount > 50) && (decoded.length() == 0)) //电视背景音,没有人讲话
+                            || ((repeatCount > 50) && (decoded.length() == 0)) // online TV background sound
                             || (repeatCount > 200)
 
                     ) {
