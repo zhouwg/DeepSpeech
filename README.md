@@ -191,3 +191,9 @@ Copyright (c) 2021 maintainer of Mozilla's DeepSpeech
 
 Licensed under MPL-2.0
 ```
+
+```
+Copyright (c) 2021 maintainer of Project KanTV
+
+Licensed under Apachev2.0 or later
+```
