@@ -1,6 +1,6 @@
 # DeepSpeech
 
-![Mozilla's DeepSpeech](https://github.com/mozilla/DeepSpeech) is an open-source Speech-To-Text engine, using a model trained by machine learning techniques based on `Baidu's Deep Speech research paper <https://arxiv.org/abs/1412.5567>`_. Project DeepSpeech uses Google's `TensorFlow <https://www.tensorflow.org/>`_ to make the implementation easier.
+![Mozilla's DeepSpeech](https://github.com/mozilla/DeepSpeech) is an open source embedded (offline, on-device) speech-to-text engine which can run in **real time** on devices, using a model trained by machine learning techniques based on `Baidu's Deep Speech research paper <https://arxiv.org/abs/1412.5567>`_. Project DeepSpeech uses Google's `TensorFlow <https://www.tensorflow.org/>`_ to make the implementation easier.
 
 This is source code of DeepSpeech(my customized DeepSpeech for project KanTV), derived from original Mozilla's DeepSpeech. with a little enhancements(because I'm **NOT** technical expert in AI filed):
 
