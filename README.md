@@ -151,9 +151,9 @@ deepspeech-0.9.3-models.scorer: 1 file pushed. 16.4 MB/s (953363776 bytes in 55.
 
 then running APK on real phone
 
+![Screenshot_20240225_165453_com cdeos deepspeechdemo](https://github.com/zhouwg/kantv/assets/6889919/c8a2cd0e-59cd-4a39-8b27-265d9c3c5d57)
 
-![Screenshot_20240225_125142_com cdeos deepspeechdemo](https://github.com/zhouwg/kantv/assets/6889919/9954927d-4106-4fc9-bf3d-5be003b55d30)
-![Screenshot_20240225_130739_com cdeos deepspeechdemo](https://github.com/zhouwg/kantv/assets/6889919/39773cd3-7e59-470f-afd6-8ad4bcc645ce)
+![Screenshot_20240225_165306_com cdeos deepspeechdemo](https://github.com/zhouwg/kantv/assets/6889919/44e15d5c-1c33-46a9-a90c-92cbb14bfe23)
 
 
 ### Support
