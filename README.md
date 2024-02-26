@@ -118,9 +118,8 @@ https://github.com/zhouwg/DeepSpeech/blob/kantv/build/envsetup.sh#L34
 - step1:build all native codes to generated essential libs
 
 ```
+. build/envsetup.sh
 ./build-all.sh
-
-
 ```
 
 - step2: build Android examples
