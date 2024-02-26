@@ -130,7 +130,7 @@ build Android examples by latest Android Studio IDE
 
 #### Post-Build
 
- dowload model file from ![offcial DeepSpeech](https://github.com/mozilla/DeepSpeech/releases/tag/v0.9.3) and upload model file to real Android phone
+ download model file from ![offcial DeepSpeech](https://github.com/mozilla/DeepSpeech/releases/tag/v0.9.3) and upload model file to real Android phone
 
 
  
