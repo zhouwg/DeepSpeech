@@ -165,7 +165,7 @@ deepspeech-0.9.3-models.scorer: 1 file pushed. 16.4 MB/s (953363776 bytes in 55.
 
 ### Contribution
 
- If you want to contribute to Project DeepSpeech, be sure to review the [opening issues](https://github.com/zhouwg/DeepSpeech/issues?q=is%3Aopen+is%3Aissue).
+ If you want to contribute to project DeepSpeech, be sure to review the [opening issues](https://github.com/zhouwg/DeepSpeech/issues?q=is%3Aopen+is%3Aissue).
 
  We use [GitHub issues](https://github.com/zhouwg/DeepSpeech/issues) for tracking requests and bugs, please see [how to submit issue in this project ](https://github.com/zhouwg/DeepSpeech/issues/1).
 
