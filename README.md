@@ -152,9 +152,9 @@ deepspeech-0.9.3-models.scorer: 1 file pushed. 16.4 MB/s (953363776 bytes in 55.
 
 #### Run Android example on real Android phone
 
-![Screenshot_20240225_165453_com cdeos deepspeechdemo](https://github.com/zhouwg/kantv/assets/6889919/c8a2cd0e-59cd-4a39-8b27-265d9c3c5d57)
+![Screenshot_20240225_165453_com cdeos deepspeechdemo](https://github.com/cdeos/kantv/assets/6889919/c8a2cd0e-59cd-4a39-8b27-265d9c3c5d57)
 
-![Screenshot_20240225_165306_com cdeos deepspeechdemo](https://github.com/zhouwg/kantv/assets/6889919/44e15d5c-1c33-46a9-a90c-92cbb14bfe23)
+![Screenshot_20240225_165306_com cdeos deepspeechdemo](https://github.com/cdeos/kantv/assets/6889919/44e15d5c-1c33-46a9-a90c-92cbb14bfe23)
 
 
 ### Support
@@ -165,9 +165,9 @@ deepspeech-0.9.3-models.scorer: 1 file pushed. 16.4 MB/s (953363776 bytes in 55.
 
 ### Contribution
 
- If you want to contribute to project DeepSpeech, be sure to review the [opening issues](https://github.com/zhouwg/DeepSpeech/issues?q=is%3Aopen+is%3Aissue).
+ If you want to contribute to project DeepSpeech, be sure to review the [opening issues](https://github.com/cdeos/DeepSpeech/issues?q=is%3Aopen+is%3Aissue).
 
- We use [GitHub issues](https://github.com/zhouwg/DeepSpeech/issues) for tracking requests and bugs, please see [how to submit issue in this project ](https://github.com/zhouwg/DeepSpeech/issues/1).
+ We use [GitHub issues](https://github.com/cdeos/DeepSpeech/issues) for tracking requests and bugs, please see [how to submit issue in this project ](https://github.com/cdeos/DeepSpeech/issues/1).
 
 
 ### whisper.cpp
