@@ -198,3 +198,8 @@ Copyright (c) 2021-2023 maintainer of Project KanTV
 
 Licensed under Apachev2.0 or later
 ```
+
+
+# Status/Defect
+
+This project is no longer maintained.
